@@ -11,6 +11,8 @@ This repository contains essential Java concepts and code examples documented in
 - [Variables & Data Types](#variables--data-types)
 - [Constants (`final` Keyword)](#constants-final-keyword)
 - [Type Casting](#type-casting)
+- [Operators](#operators)
+- [Java Strings](#java-strings)
 - [Practical Examples](#practical-examples)
 
 ---
@@ -109,6 +111,132 @@ Converting a larger type to a smaller type size (`double` to `int`).
 ```java
 double myDoubles = 9.78d;
 int myInts = (int) myDoubles; // Manual casting: double to int
+```
+
+---
+
+## ➗ Operators
+
+### 1. Arithmetic Operators
+Used to perform common mathematical operations.
+
+| Operator | Description | Example |
+| :--- | :--- | :--- |
+| `+` | Addition | `a + b` |
+| `-` | Subtraction | `a - b` |
+| `*` | Multiplication | `a * b` |
+| `/` | Division | `a / b` |
+| `%` | Modulus (remainder) | `a % b` |
+| `++` | Increment (increase by 1) | `++a` |
+| `--` | Decrement (decrease by 1) | `--b` |
+
+```java
+int a = 20;
+int b = 10;
+System.out.println("a + b: " + (a + b));  // 30
+System.out.println("a - b: " + (a - b));  // 10
+System.out.println("a * b: " + (a * b));  // 200
+System.out.println("a / b: " + (a / b));  // 2
+System.out.println("a % b: " + (a % b));  // 0
+System.out.println("a++: " + (++a));      // 21
+System.out.println("b--: " + (--b));      // 9
+```
+
+### 2. Comparison Operators
+Used to compare two values.
+
+| Operator | Description | Example |
+| :--- | :--- | :--- |
+| `==` | Equal to | `a == b` |
+| `!=` | Not equal | `a != b` |
+| `<` | Less than | `a < b` |
+| `>` | Greater than | `a > b` |
+| `<=` | Less than or equal to | `a <= b` |
+| `>=` | Greater than or equal to | `a >= b` |
+
+```java
+System.out.println("a == b: " + (a == b));
+System.out.println("a != b: " + (a != b));
+System.out.println("a < b: " + (a < b));
+System.out.println("a > b: " + (a > b));
+System.out.println("a <= b: " + (a <= b));
+System.out.println("a >= b: " + (a >= b));
+```
+
+### 3. Logical Operators
+Used to determine the logic between variables or values.
+
+| Operator | Description | Example |
+| :--- | :--- | :--- |
+| `&&` | Logical AND (true if both are true) | `c && d` |
+| `\|\|` | Logical OR (true if at least one is true) | `c \|\| d` |
+| `!` | Logical NOT (reverses the result) | `!c` |
+
+```java
+boolean c = true;
+boolean d = false;
+System.out.println("c && d: " + (c && d));  // false
+System.out.println("c || d: " + (c || d));  // true
+System.out.println("!c: " + (!c));          // false
+```
+
+### 4. Operator Precedence
+Some common operators, from highest to lowest priority:
+
+| Priority | Operators |
+| :--- | :--- |
+| 1 (Highest) | `()` - Parentheses |
+| 2 | `*`, `/`, `%` - Multiplication, Division, Modulus |
+| 3 | `+`, `-` - Addition, Subtraction |
+| 4 | `>`, `<`, `>=`, `<=` - Comparison |
+| 5 | `==`, `!=` - Equality |
+| 6 | `&&` - Logical AND |
+| 7 | `\|\|` - Logical OR |
+| 8 (Lowest) | `=` - Assignment |
+
+```java
+int result1 = 10 - 2 + 5;      // (10 - 2) + 5 = 13
+int result2 = 10 - (2 + 5);    // 10 - 7 = 3
+```
+
+---
+
+## 📝 Java Strings
+
+A `String` in Java is actually an **object**, which means it contains methods that can perform certain operations on strings.
+
+### 1. String Length (`.length()`)
+Finds the number of characters in a string.
+
+```java
+String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());  // 26
+```
+
+### 2. Uppercase & Lowercase (`.toUpperCase()` / `.toLowerCase()`)
+Converts a string to uppercase or lowercase.
+
+```java
+String text1 = "Hello World";
+System.out.println(text1.toUpperCase());  // "HELLO WORLD"
+System.out.println(text1.toLowerCase());  // "hello world"
+```
+
+### 3. Find Index of Substring (`.indexOf()`)
+Finds the first occurrence of a substring within a string.
+
+```java
+String text2 = "Please locate where 'locate' occurs!";
+System.out.println(text2.indexOf("locate"));  // 7
+```
+
+### 4. Character at Index (`.charAt()`)
+Returns the character at a specified index (0-based).
+
+```java
+String text3 = "Hello";
+System.out.println(text3.charAt(0));  // H
+System.out.println(text3.charAt(4));  // o
 ```
 
 ---
